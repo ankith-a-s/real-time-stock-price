@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'real-time-stock-price';
+  title = 'Real Time Stock Price';
 }
