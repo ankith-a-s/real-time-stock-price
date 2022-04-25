@@ -1,4 +1,10 @@
-<div style="margin: 2rem;">
-    <app-stock-list ></app-stock-list>
+<app-toolbar></app-toolbar>
+<div style="margin: 2rem; margin-top: calc(2rem + 64px);">
+  <app-add-stock [state]="state" (updateState)="updateState(state)"></app-add-stock>
+  <div [ngStyle]="{ visibility: !state.chartData.length ? 'hidden' : 'unset' }">
+    <mat-divider style="margin: 3rem 0"></mat-divider>
+    <app-stock-list [state]="state" (updateState)="updateState(state)"></app-stock-list>
+    <mat-divider style="margin: 3rem 0"></mat-divider>
+    <app-chart-view [state]="state"></app-chart-view>
+  </div>
 </div>
-<router-outlet></router-outlet>

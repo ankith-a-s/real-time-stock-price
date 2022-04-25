@@ -1,22 +1,30 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from './material.module';
 import { HttpClientModule } from '@angular/common/http';
-import { StockListComponent } from './stock-list/stock-list.component';
 import { LineChartModule } from '@swimlane/ngx-charts';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
-import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
-import { AddStockComponent } from './add-stock/add-stock.component';
-import { ChartViewComponent } from './chart-view/chart-view.component';
+
+import { MaterialModule } from './material.module';
+import { AppRoutingModule } from './app-routing.module';
+
+import { AppComponent } from './app.component';
+import { StockListComponent } from './components/stock-list/stock-list.component';
+import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
+import { AddStockComponent } from './components/add-stock/add-stock.component';
+import { ChartViewComponent } from './components/chart-view/chart-view.component';
+import { ToolbarComponent } from './components/toolbar/toolbar.component';
 
 @NgModule({
-  declarations: [AppComponent, StockListComponent, ConfirmDialogComponent, AddStockComponent, ChartViewComponent],
+  declarations: [
+    AppComponent,
+    StockListComponent,
+    ConfirmDialogComponent,
+    AddStockComponent,
+    ChartViewComponent,
+    ToolbarComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -26,7 +34,7 @@ import { ChartViewComponent } from './chart-view/chart-view.component';
     ReactiveFormsModule,
     MaterialModule,
     NgxChartsModule,
-    LineChartModule
+    LineChartModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

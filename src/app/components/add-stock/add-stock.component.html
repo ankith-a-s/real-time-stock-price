@@ -1,0 +1,29 @@
+<div class="mat-h1">Add Stock</div>
+<mat-form-field
+  appearance="fill"
+  style="width: 50%"
+>
+  <mat-label>Search Stock</mat-label>
+  <input
+    matInput
+    aria-label="Search Stock"
+    [matAutocomplete]="auto"
+    [formControl]="searchCtrl"
+  />
+  <mat-autocomplete #auto="matAutocomplete">
+    <mat-option
+      *ngFor="let state of filteredStocks | async"
+      [value]="state.symbol"
+    >
+      <span>{{ state.description }}</span> |
+      <small>{{ state.displaySymbol }}</small>
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>
+<div class="error" *ngIf="!((filteredStocks | async)?.length) && searchCtrl.dirty">
+  Please enter a valid stock name
+</div>
+<button mat-raised-button color="primary" (click)="addStockToList()" style="display: block;">
+  <mat-icon>add</mat-icon>
+  Add stock
+</button>

@@ -1,0 +1,22 @@
+<div class="mat-h1" style="margin-top: 2rem">Chart View</div>
+  <div style="display: flex; justify-content: center" *ngIf="state?.chartData?.length">
+    <ngx-charts-line-chart
+      style="margin: 2rem"
+      [view]="view"
+      [scheme]="colorScheme"
+      [results]="state.chartData"
+      [gradient]="gradient"
+      [xAxis]="showXAxis"
+      [yAxis]="showYAxis"
+      [legend]="showLegend"
+      [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [xAxisLabel]="xAxisLabel"
+      [yAxisLabel]="yAxisLabel"
+      [autoScale]="autoScale"
+      [animations]="false"
+      [timeline]="true"
+      (select)="onSelect($event)"
+    >
+    </ngx-charts-line-chart>
+  </div>

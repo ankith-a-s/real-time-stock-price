@@ -6,8 +6,8 @@ import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 
 export interface Message {
-    source: string;
-    content: string;
+    type: string;
+    symbol: string;
 }
 
 @Injectable({
