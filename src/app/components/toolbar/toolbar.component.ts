@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { openSnackBar } from 'src/app/utils/function';
+import { openSnackBar } from '../../utils/function';
 
 @Component({
   selector: 'app-toolbar',
