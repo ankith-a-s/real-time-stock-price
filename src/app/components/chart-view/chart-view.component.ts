@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ChartViewComponent implements OnInit {
 
-  view: any[] = [1200, 600];
+  view: any = [1200, 600];
   showXAxis = true;
   showYAxis = true;
   gradient = false;
@@ -18,7 +18,7 @@ export class ChartViewComponent implements OnInit {
   yAxisLabel = 'Stock Price ($)';
   updateInterval;
 
-  colorScheme = {
+  colorScheme: any = {
     domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA'],
   };
   autoScale = true;

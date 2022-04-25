@@ -21,7 +21,6 @@ export class WebsocketService {
       this.messages = <Subject<Message>>this.connect(`${environment.FINNHUB_WEB_SOCKET_URL}?token=${environment.FINNHUB_TOKEN}`).pipe(
           map(
               (response: MessageEvent): Message => {
-                  console.log(response.data);
                   let data = JSON.parse(response.data)
                   return data;
               }

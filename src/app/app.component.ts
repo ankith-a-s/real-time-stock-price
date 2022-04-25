@@ -49,10 +49,12 @@ export class AppComponent {
       newData.map((stock) => {
         if (!stock.p) return;
         const stockIndex = this.state.selectedStocks.findIndex(
-          (currStock) => currStock.s === stock.symbol
+          (currStock) => currStock.symbol === stock.s
         );
-        this.state.selectedStocks[stockIndex].currentPrice.c = stock.p;
-        this.updateState(this.state);
+        if(stockIndex !== -1) {
+          this.state.selectedStocks[stockIndex].currentPrice.c = stock.p;
+          this.updateState(this.state);
+        }
       });
     }
   }
